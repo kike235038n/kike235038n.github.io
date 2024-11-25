@@ -63,20 +63,32 @@ h1 {
 }
 
 .contenedor-texto {
+    width: 100%;
     max-width: 1000px;
-    height: 550px;
+    height: 750px; /* Permite que la altura sea flexible */
     margin: 40px auto;
     padding: 0 30px;
     border: 1px solid #ddd;
     border-radius: 15px;
     background: #fff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+    word-wrap: break-word; /* Rompe palabras largas para que no se salgan del contenedor */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contenedor-texto:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor-texto {
+        padding: 0 20px; /* Reduce el padding en pantallas pequeñas */
+        margin: 20px; /* Ajusta el margen */
+    }
 }
 
 .contenedor-datos {
