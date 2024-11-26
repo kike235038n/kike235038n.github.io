@@ -1151,3 +1151,41 @@ function cargarPreguntasAdicionales11() {
 
 // Asegúrate de que esta función se llame al fin    al del archivo JavaScript
 cargarPreguntasAdicionales11();
+
+document.getElementById('resultado').onclick = async function () {
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
+    const grupo = document.getElementById('grupo').value.trim();
+
+    if (!nombre || !apellidos || !grupo) {
+        alert('Por favor, llena todos los campos requeridos.');
+        return;
+    }
+
+    // Calcular aciertos
+    let cantiCorrectas = 0;
+    bd_juego.forEach((pregunta, i) => {
+        if (respuestas[i] == pregunta.correcta) {
+            cantiCorrectas++;
+        }
+    });
+
+    // Enviar datos al servidor
+    try {
+        const response = await fetch('http://localhost:3000/api/registrar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre, apellidos, grupo, aciertos: cantiCorrectas }),
+        });
+
+        if (response.ok) {
+            alert('Tus resultados se han enviado correctamente.');
+        } else {
+            alert('Hubo un problema al enviar tus resultados. Intenta de nuevo.');
+        }
+    } catch (err) {
+        console.error('Error al conectar con el servidor:', err);
+        alert('Error al conectar con el servidor.');
+    }
+};
+
