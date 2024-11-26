@@ -965,7 +965,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 100,
             pregunta: "SCRIPT 1",
-            audio: "audio1.mp3", // Ruta al audio
+            audio: "audio1.mp3",
             op0: "a) Tom is not in.",
             op1: "b) Sarah is not there.",
             op2: "c) Sarah called Tom.",
