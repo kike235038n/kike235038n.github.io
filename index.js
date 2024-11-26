@@ -965,7 +965,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 100,
             pregunta: "SCRIPT 1",
-            audio: "https://github.com/kike235038n/kike235038n.github.io/blob/main/audio1.mpeg", // Ruta al audio
+            audio: "https://github.com/kike235038n/kike235038n.github.io/blob/main/audio1.mp3", // Ruta al audio
             op0: "a) Tom is not in.",
             op1: "b) Sarah is not there.",
             op2: "c) Sarah called Tom.",
@@ -975,7 +975,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 101,
             pregunta: "SCRIPT 2",
-            audio: "audio2.MPEG", // Ruta al audio
+            audio: "audio2.MP3", // Ruta al audio
             op0: "a) The tour is about modern civilizations",
             op1: "b) The exhibit is about recent artifacts.",
             op2: "c) The museum is closed.",
@@ -985,7 +985,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 102,
             pregunta: "SCRIPT 3",
-            audio: "audio3.MPEG" ,
+            audio: "audio3.MP3" ,
             op0: "a) The woman doesn't like the new restaurant.",
             op1: "b) The man should avoid the new restaurant.",
             op2: "c) The woman recommends trying the new restaurant.",
@@ -995,7 +995,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 103,
             pregunta: "SCRIPT 4",
-            audio: "audio4.MPEG" ,
+            audio: "audio4.MP3" ,
             op0: "a) The sale is at ABC Electronics.",
             op1: "b) The sale is only on old gadgets.",
             op2: "c) The sale is next month.",
@@ -1005,7 +1005,7 @@ function cargarPreguntasAdicionales10() {
         {
             id: 104,
             pregunta: "SCRIPT 5",
-            audio: "audio5.MPEG" ,
+            audio: "audio5.MP3" ,
             op0: "a) The candidate has no experience in project management.",
             op1: "b) The candidate's project was late and over budget.",
             op2: "c) The candidate led a successful project in the past.",
