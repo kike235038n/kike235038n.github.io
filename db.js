@@ -6,22 +6,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configuración de PostgreSQL
+// Configuración de la base de datos
 const pool = new Pool({
-    user: 'postgres',         // Cambia por tu usuario de PostgreSQL
-    host: 'localhost',          // Cambia si tu base de datos no está en localhost
-    database: 'postgres', // Cambia por el nombre de tu base de datos
-    password: 'Dani1216',  // Contraseña de PostgreSQL
-    port: 5434,                 // Puerto por defecto
+    user: 'postgres',         
+    host: 'localhost',          
+    database: 'postgres', 
+    password: 'Dani1216',  
+    port: 5434,                 
 });
 
-// Ruta para obtener las preguntas
-app.get('/api/preguntas', async (req, res) => {
+// Ruta para registrar los resultados
+app.post('/api/registrar', async (req, res) => {
+    const { nombre, apellidos, grupo, aciertos } = req.body;
+
     try {
-        const result = await pool.query('SELECT * FROM preguntas');
-        res.json(result.rows);
+        await pool.query(
+            'INSERT INTO registros (nombre, apellidos, grupo, aciertos) VALUES ($1, $2, $3, $4)',
+            [nombre, apellidos, grupo, aciertos]
+        );
+        res.status(200).send('Registro exitoso');
     } catch (err) {
-        console.error('Error al obtener preguntas:', err);
+        console.error('Error al registrar datos:', err);
         res.status(500).send('Error en el servidor');
     }
 });
